@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collections - Vanaraaga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="navbar-custom">
+    <div class="nav-left">
+      <span class="made-in-india" style="font-family: 'Playfair Display', serif; font-weight: bold; font-size: 1.5rem; color: #5c3a00;">MADE IN INDIA</span>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="collections.html">Collections</a>
+      <a href="custom-order.html">Custom Order</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <div class="collections-hero text-center mt-5 pt-5">
+    <h1 style="font-family: 'Playfair Display', serif; font-weight: bold; color: #5c3a00;">VANARAAGA</h1>
+  </div>
+
+  <div class="container collections-grid my-5">
+    <!-- Example product grid -->
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="product-card">
+          <img src="images/product1.png" class="img-fluid" alt="Product 1">
+          <h5>Red Saree</h5>
+          <p>$120</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card">
+          <img src="images/product2.png" class="img-fluid" alt="Product 2">
+          <h5>Golden Lehenga</h5>
+          <p>$180</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card">
+          <img src="images/product3.png" class="img-fluid" alt="Product 3">
+          <h5>Beige Kurta</h5>
+          <p>$90</p>
+        </div>
+      </div>
+      <!-- Add more items as needed -->
+    </div>
+  </div>
+
+  <script>
+    // Save scroll position
+    window.addEventListener('beforeunload', () => {
+      localStorage.setItem('scrollPosition', window.scrollY);
+    });
+
+    // Restore scroll position
+    window.addEventListener('load', () => {
+      const scrollPos = localStorage.getItem('scrollPosition');
+      if (scrollPos) {
+        window.scrollTo(0, scrollPos);
+      }
+    });
+  </script>
+</body>
+</html>

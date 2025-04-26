@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Vanaraaga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Eczar:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="overflow: hidden;">
+  <div class="navbar-custom">
+    <div class="nav-left">
+      <span class="made-in-india" style="font-family: 'Eczar', serif; font-weight: 600; font-size: 1.5rem; color: #fff8f0;">VANARAAGA</span>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="collections.html">Collections</a>
+      <a href="custom-order.html">Custom Order</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="about-hero">
+    <div class="about-content text-center">
+      <h1 class="about-heading" style="font-family: 'Eczar', serif; font-weight: 600;">About Us</h1>
+      <p class="about-text">
+        At Vanaraaga, our designers blend the rich heritage of Indian craftsmanship with modern sensibilities. Each piece is thoughtfully tailored, drawing inspiration from centuries of tradition, ensuring every garment tells a story. We deeply value our customers and strive to deliver handcrafted elegance that resonates with your individuality.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const letters = ['अ','आ','इ','ई','उ','ऊ','ऋ','क','ख','ग','घ','च','छ','ज','झ','त','थ','द','ध','न','प','फ','ब','भ','म','य','र','ल','व','श','ष','स','ह'];
+    const container = document.querySelector('.about-hero');
+  
+    for (let i = 0; i < 100; i++) { // More intense
+      const span = document.createElement('span');
+      span.textContent = letters[Math.floor(Math.random() * letters.length)];
+      span.classList.add('floating-letter');
+  
+      const left = Math.random() * 100;
+      const top = Math.random() * 100;
+      span.style.left = left + 'vw';
+      span.style.top = top + 'vh';
+  
+      // Determine nearest edge
+      const nearestEdge = Math.min(left, 100 - left, top, 100 - top);
+      if (nearestEdge === left) {
+        span.dataset.direction = 'left';
+      } else if (nearestEdge === 100 - left) {
+        span.dataset.direction = 'right';
+      } else if (nearestEdge === top) {
+        span.dataset.direction = 'top';
+      } else {
+        span.dataset.direction = 'bottom';
+      }
+  
+      container.appendChild(span);
+    }
+  </script>
+
+</body>
+</html>
